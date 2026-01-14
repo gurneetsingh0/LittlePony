@@ -213,11 +213,12 @@ main #hero #heroimage-box {
 #stats #statrow {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   gap: 0.5rem;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  gap: clamp(1.2rem, 3vw, 3rem);
 }
 #stats #statrow::-webkit-scrollbar {
   height: 0;
@@ -229,35 +230,30 @@ main #hero #heroimage-box {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-
+  gap: 0.5rem;
+  padding: 2rem 1rem;
   background-color: var(--accent4);
   color: var(--back-color);
   text-align: center;
-
-  width: clamp(160px, 22vw, 240px);
-  height: clamp(220px, 32vw, 340px);
-
   border-radius: clamp(10px, 1.2vw, 16px);
-  padding: clamp(0.8rem, 2vw, 1.5rem);
+  width: clamp(160px, 22vw, 240px);
+  height: clamp(200px, 32vw, 340px);
 }
 
 #stats #statrow .statbox img {
   height: clamp(60px, 10vw, 120px);
-  margin-top: clamp(0.4rem, 1vw, 0.8rem);
-  margin-bottom: clamp(0.6rem, 1.5vw, 1.2rem);
   flex-shrink: 0;
 }
-
 #stats .statbox h3 {
   font-family: papernotes;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1rem, 3vw, 2rem);
   line-height: 0.9;
+  margin: 0 0 clamp(0.4rem, 1vw, 0.6rem) 0;
 }
 
 #stats .statbox h5 {
   font-family: sans-serif;
-  margin-top: clamp(0.3rem, 1vw, 0.6rem);
-  font-size: clamp(0.7rem, 1.4vw, 0.9rem);
+  font-size: clamp(0.5rem, 1.4vw, 0.9rem);
   line-height: 1.1;
 }
 
@@ -390,7 +386,7 @@ main #reviews {
   font-size: clamp(1.8rem, 3vw, 2.5rem);
 }
 .section {
-  padding: clamp(1rem, 3vw, 2rem);
+  padding: clamp(0.5rem, 3vw, 2rem);
   margin-top: clamp(1rem, 4vw, 2rem);
 }
 .heading {
@@ -417,8 +413,6 @@ main #reviews {
   font-size: clamp(1rem, 1.5vw, 1.9rem);
   color: #111;
 }
-
-/* footer styles */
 
 footer {
   background-color: var(--accent-color);
@@ -453,8 +447,6 @@ footer #contactme h3 {
   font-size: clamp(10px, 3vw, 30px);
 }
 
-/* Shop.html css */
-
 #products {
   display: flex;
   flex-wrap: wrap;
@@ -469,10 +461,12 @@ footer #contactme h3 {
   width: 31rem;
   height: clamp(15rem, 20vw, 18rem);
   border-radius: clamp(10px, 1.2vw, 16px);
+
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  gap: 0;
+  gap: clamp(1rem, 2vw, 1.5rem);
+
+  padding: clamp(1rem, 2vw, 1.5rem);
 }
 
 .cardtext {
@@ -480,27 +474,26 @@ footer #contactme h3 {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 20px;
+  gap: clamp(0.6rem, 1.5vw, 1rem);
 }
+
 .shop-card img {
   height: clamp(11rem, 50vw, 13rem);
   width: auto;
   border-radius: clamp(10px, 1.2vw, 16px);
-  margin: 13px;
+  margin: 0;
 }
+
 .shop-card h3 {
   font-family: papernotes;
   font-size: clamp(2rem, 2.5vw, 2.5rem);
   color: var(--back-color);
-  margin-top: 3%;
 }
 .shop-card h5 {
   font-family: papernotes;
   line-height: 1;
   font-size: 1.5;
   color: var(--back-color);
-  margin-top: 5%;
-  padding: 4px;
 }
 
 .order-btn {
@@ -516,6 +509,7 @@ footer #contactme h3 {
   align-items: center;
   gap: clamp(0.3rem, 1vw, 0.5rem);
   cursor: pointer;
+  margin-top: 0.5rem;
 }
 
 .order-btn i {
@@ -611,7 +605,6 @@ footer #contactme h3 {
   opacity: 0.9;
 }
 
-/* Contact.html styles */
 #contactusbox {
   height: 100%;
   width: 100%;
@@ -641,9 +634,34 @@ footer #contactme h3 {
 .mobilebr {
   display: none;
 }
-@media (min-width: 701px) {
-  #mobile-panel {
-    display: none;
+@media (min-width: 1300px) {
+  #stats #statrow {
+    justify-content: center;
+    gap: clamp(1.5rem, 3vw, 3rem);
+    max-width: 1400px;
+  }
+  .statbox {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: clamp(0.8rem, 1.5vw, 1.2rem);
+    align-items: center;
+    text-align: left;
+    width: clamp(360px, 30vw, 440px);
+    height: clamp(170px, 14vw, 200px);
+    padding: clamp(0.9rem, 1.5vw, 1.3rem);
+  }
+  .statbox img {
+    grid-row: 1 / span 2;
+    height: clamp(80px, 6vw, 105px);
+    flex-shrink: 0;
+  }
+  .statbox h3 {
+    align-self: end;
+  }
+  .statbox h5 {
+    margin-top: clamp(0.3rem, 0.8vw, 0.5rem);
+    align-self: start;
   }
 }
 
@@ -671,10 +689,8 @@ footer #contactme h3 {
   main #hero .main-btn {
     width: 45vw;
     height: 10vw;
-
     font-size: 8vw;
     letter-spacing: 0.04em;
-
     margin-top: 3rem;
     border-width: 2.5px;
     border-radius: 12px;
@@ -685,6 +701,12 @@ footer #contactme h3 {
     display: block;
   }
 }
+@media (min-width: 701px) {
+  #mobile-panel {
+    display: none;
+  }
+}
+
 @media (max-width: 700px) {
   #nav2 {
     display: none;
@@ -709,6 +731,11 @@ footer #contactme h3 {
 @media (max-width: 405px) {
   .Credits {
     font-size: 3rem;
+  }
+}
+@media (max-width: 310px) {
+  .section {
+    padding: 20px 1px;
   }
 }
 @media (max-width: 300px) {
