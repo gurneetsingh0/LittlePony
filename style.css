@@ -448,17 +448,20 @@ footer #contactme h3 {
 }
 
 #products {
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(0.8rem, 2vw, 1.5rem);
-  align-items: center;
-  justify-content: space-around;
-  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(18rem, 1fr));
+  gap: clamp(1rem, 3vw, 3rem);
+  justify-content: center;
+  justify-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: clamp(40rem, 92vw, 90rem);
 }
 
 .shop-card {
   background-color: var(--accent4);
-  width: 31rem;
+  width: 100%;
+  max-width: clamp(22rem, 35vw, 36rem);
   height: clamp(15rem, 20vw, 18rem);
   border-radius: clamp(10px, 1.2vw, 16px);
 
@@ -535,7 +538,7 @@ footer #contactme h3 {
 }
 
 .special-card {
-  background-color: var(--accent3);
+  background-color: var(--accent4);
 
   width: clamp(20rem, 85vw, 60rem);
   min-height: clamp(16rem, 22vw, 22rem);
@@ -582,14 +585,11 @@ footer #contactme h3 {
   width: clamp(8rem, 18vw, 14rem);
   height: clamp(3.2rem, 4vw, 3.8rem);
   border-radius: clamp(6px, 1vw, 10px);
-
-  background-color: var(--accent2);
+  background-color: var(--accent-color);
   border: solid 2px black;
   color: black;
-
   font-family: papernotes;
   font-size: clamp(1.1rem, 2.2vw, 1.4rem);
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -699,6 +699,9 @@ footer #contactme h3 {
 @media (max-width: 750px) {
   .mobilebr {
     display: block;
+  }
+  #products {
+    grid-template-columns: 1fr;
   }
 }
 @media (min-width: 701px) {
