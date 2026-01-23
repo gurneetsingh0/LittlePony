@@ -255,6 +255,9 @@ main #hero #heroimage-box {
   font-family: sans-serif;
   font-size: clamp(0.5rem, 1.4vw, 0.9rem);
   line-height: 1.1;
+  font-weight: 100;
+  opacity: 0.9;
+  letter-spacing: 0.1;
 }
 
 main #reviews {
@@ -497,6 +500,8 @@ footer #contactme h3 {
   line-height: 1;
   font-size: 1.5;
   color: var(--back-color);
+  opacity: 0.9;
+  font-weight: 100;
 }
 
 .order-btn {
@@ -579,6 +584,8 @@ footer #contactme h3 {
   font-size: clamp(1.4rem, 2vw, 1.8rem);
   line-height: 1.1;
   color: var(--back-color);
+  opacity: 0.9;
+  font-weight: 100;
 }
 
 .special-btn {
