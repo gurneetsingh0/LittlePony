@@ -525,7 +525,7 @@ footer #contactme h3 {
 }
 
 .order-btn:hover {
-  opacity: 0.9;
+  background-color: var(--accent-hover);
 }
 #custom-product {
   display: flex;
@@ -609,7 +609,7 @@ footer #contactme h3 {
 }
 
 .special-btn:hover {
-  opacity: 0.9;
+  background-color: var(--accent-hover);
 }
 
 #contactusbox {
